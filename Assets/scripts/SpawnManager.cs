@@ -30,10 +30,10 @@ public class SpawnManager : MonoBehaviour
             if (obstacles[i] != null)
             {
                 obstacles[i].enabled = false;
-                Destroy(obstacles[i]);
+                Destroy(obstacles[i].gameObject);
             }
         }
-       obstacles = new List<Obstacle>();
+        obstacles.Clear();
     }
 
     private void OnEnable()
