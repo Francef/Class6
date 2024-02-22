@@ -23,6 +23,18 @@ public class SpawnManager : MonoBehaviour
         Obstacle obstacle = obj.GetComponent<Obstacle>();
         obstacles.Add(obstacle);
     }
+    public void DestroyObstacles()
+    {
+        for (int i = 0; i < obstacles.Count; i++)
+        {
+            if (obstacles[i] != null)
+            {
+                obstacles[i].enabled = false;
+                Destroy(obstacles[i]);
+            }
+        }
+       obstacles = new List<Obstacle>();
+    }
 
     private void OnEnable()
     {
